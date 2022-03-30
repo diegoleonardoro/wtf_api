@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app: 
+    container_name: wtf-api-project
+    restart: always
+    build: . 
+    volumes:
+      - app_data:/app/usr/src/app
+    ports:
+      - "3000:3000"
+    environment:
+      - AUTHORIZED_USERNAME=admin
+      - AUTHORIZED_PASSWORD=password
+
+volumes: 
+  app_data: 
